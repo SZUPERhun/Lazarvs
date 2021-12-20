@@ -1,12 +1,17 @@
 <template>
- <div class="footer">
+ <div id="footer">
    <div class="centered">
      <img @click="scrollToTop" class="cursor" width="35" height="35" :src="require('../assets/uparrow.svg')" alt="up">
    </div>
+   <div class="centered-bottom">
+     © 2009-2021 LAZARVS
+   </div>
+
  </div>
 </template>
 
 <script>
+
 export default {
   name: "Footer",
   methods: {
@@ -22,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-  .footer {
+  #footer {
     position: relative;
     height: 200px;
     background-color: #1d1d1d;
@@ -33,8 +38,16 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  .centered-bottom {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
     text-align: center;
   }
   .cursor {

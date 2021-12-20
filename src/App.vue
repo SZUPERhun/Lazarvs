@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <NavBar/>
-    <Index/>
-    <Footer></Footer>
+    <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import Index from "@/views/Index";
+
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
@@ -15,7 +15,6 @@ export default {
   name: 'App',
   components: {
     Footer,
-    Index,
     NavBar
   }
 }
@@ -28,13 +27,13 @@ export default {
   }
   html, body {
     height: 100%;
-    margin: 0;
   }
 
   #app {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background: black;
   }
 
 </style>

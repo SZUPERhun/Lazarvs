@@ -1,4 +1,4 @@
-# lazarvs
+# bozjafatetracker
 
 ## Project setup
 ```

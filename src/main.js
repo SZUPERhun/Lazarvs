@@ -1,17 +1,47 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
+// Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
-Vue.config.productionTip = false
-
+// Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import Index from './views/Index';
+import Bio from './views/Bio';
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'index',
+            component: Index,
+        },
+        {
+            path: '/bio',
+            name: 'bio',
+            component: Bio,
+        }
+    ],
+    scrollBehavior() {
+        return {
+            x: 0,
+            y: 0,
+        };
+    },
+})
+
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    render: h => h(App),
+    router,
+}).$mount('#app');
