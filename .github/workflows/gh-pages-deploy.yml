@@ -15,8 +15,11 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
 
-      - name: Clean install dependencies
+      - name: install dependencies
         run: npm i
+
+      - name: install cross-env
+        run: npm install cross-env
 
       - name: Run deploy script
         run: |
