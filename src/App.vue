@@ -57,5 +57,12 @@ export default {
   .back:hover {
     opacity: 0.75;
   }
+  a {
+    color: black !important;
+  }
+  a:hover {
+    opacity: 0.75;
+    text-decoration: none !important;
+  }
 
 </style>

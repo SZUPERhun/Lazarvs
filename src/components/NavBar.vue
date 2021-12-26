@@ -3,9 +3,9 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="/bio">BIO</b-nav-item>
-        <b-nav-item href="./bio">LIVE</b-nav-item>
-        <b-nav-item href="/concerts">CONCERTS</b-nav-item>
+        <b-nav-item><router-link to="/bio">BIO</router-link></b-nav-item>
+        <b-nav-item><router-link to="/">LIVE</router-link></b-nav-item>
+        <b-nav-item><router-link to="/concerts">CONCERTS</router-link></b-nav-item>
         <b-nav-item href="https://lazarvs.empiremerch.com">STORE</b-nav-item>
         <b-nav-item href="https://urlzs.com/cKAVW"><img height="70" width="40" src="../assets/spotify.svg" alt="Spotify"></b-nav-item>
         <b-nav-item href="https://www.facebook.com/lazarvsofficial"><img height="70" width="40" src="../assets/facebook.svg" alt="Facebook"></b-nav-item>
