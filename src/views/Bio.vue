@@ -18,7 +18,7 @@
         test
       </div>
       <br><br>
-      <a class="cursor back" href="/"><img height="25" width="20" :src="require('../assets/back.svg')" alt="Back">Back</a>
+      <router-link class="cursor back" to="/"><img height="25" width="20" :src="require('../assets/back.svg')" alt="Back">Back</router-link>
       <br>
     </b-container>
     <br><br>
