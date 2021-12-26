@@ -16,8 +16,14 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
+
+Vue.use(VueLodash, { lodash: lodash })
+
 import Index from './views/Index';
 import Bio from './views/Bio';
+import Concerts from './views/Concerts';
 
 const router = new VueRouter({
     mode: 'history',
@@ -31,6 +37,11 @@ const router = new VueRouter({
             path: '/bio',
             name: 'bio',
             component: Bio,
+        },
+        {
+            path: '/concerts',
+            name: 'concerts',
+            component: Concerts,
         }
     ],
     scrollBehavior() {

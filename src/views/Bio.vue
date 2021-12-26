@@ -1,7 +1,10 @@
 <template>
-  <div id="bio-container">
-    <b-container id="bio" :style="{ 'margin-top': height + 'px' }">
-      <div id="bio-content">
+  <div class="template">
+    <b-container class="container" :style="{ 'margin-top': height + 'px' }">
+      <a class="button languageButton" @click="updateLanguage(oppositeLanguage)">
+            <img height="40" width="40" :src="require(`../assets/${ oppositeLanguage }.svg`)" :alt=oppositeLanguage>
+        </a>
+      <div v-if="language === 'en'">
         <h1>LAZARVS</h1>
         formerly known as Apey & the Pea (changed their name in 2019) is a power trio formed in 2008 in the heart of Budapest, after the breakup of a Pantera tribute band where the three founding members met. The band succeeded far from their original plans after releasing
         four albums, and one EP, serving heavy riffs, loud amps, and sweaty live performances for over a decade. Throughout the years the band mastered their skills with their extremely aggressive live performances, and the commitment to their riff oriented devotion
@@ -10,10 +13,15 @@
         band also played at Sziget Festival’s main stage, and won the Hungarian music contest ‘Nagyszínpad’. They achieved the best metal album twice throughout their 12 year career at the ‘Hungarian Grammys’ Fonogram Awards, and played at professional showcase festivals
         like ESNS19’ or Tallinn Music Week in 2019.
       </div>
+      <div v-if="language === 'hu'">
+        <h1>LAZARVS</h1>
+        test
+      </div>
       <br><br>
       <a class="cursor back" href="/"><img height="25" width="20" :src="require('../assets/back.svg')" alt="Back">Back</a>
       <br>
     </b-container>
+    <br><br>
   </div>
 
 </template>
@@ -24,6 +32,8 @@ export default {
   data() {
       return {
           height: 0,
+          language: 'en',
+          oppositeLanguage: 'hu',
       }
   },
   created() {
@@ -38,29 +48,40 @@ export default {
   methods: {
     handleResize() {
       this.height = document.getElementsByClassName("navbar")[0].clientHeight + 20;
+    },
+    updateLanguage(oppositeLanguage) {
+      this.oppositeLanguage = this.language;
+      this.language = oppositeLanguage;
     }
   }
 }
 </script>
 
 <style scoped>
-  #bio-container {
-    min-height: 100vh;
+  h1 {
+    font-family: 'OldLondon', sans-serif !important;
   }
-  #bio {
-    background-color: rgba(220, 220, 220, 0.7);
-    border-radius: 25px;
-    padding: 30px;
+  .container {
+    position: relative;
   }
-  .cursor {
-      cursor: pointer;
+  .languageButton {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    padding: 0;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
   }
-  .back {
-      display: block;
-      text-align: center;
-      color: black;
-  }
-  .back:hover {
-    opacity: 0.75;
+  .languageButton:focus {
+    outline:0 !important;
+    -webkit-appearance:none !important;
+    box-shadow: none !important;
   }
 </style>
