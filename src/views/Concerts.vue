@@ -62,6 +62,10 @@ export default {
   },
   methods: {
     handleResize() {
+      if (document.getElementsByClassName("navbar-toggler")[0].clientHeight !== 0) {
+        this.height = document.getElementsByClassName("navbar-toggler")[0].clientHeight + 20;
+        return;
+      }
       this.height = document.getElementsByClassName("navbar")[0].clientHeight + 20;
     },
     getConcertData() {

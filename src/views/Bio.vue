@@ -15,7 +15,14 @@
       </div>
       <div v-if="language === 'hu'">
         <h1>LAZARVS</h1>
-        test
+        2008 végén ‘Apey & the Pea’ néven alakult budapesti zenekar, amely Áron András (ex-Neck Sprain) szólóprojektjéből átalakulva, illetve egykori Superbutt tagokkal (Makai László, Prepelicza Zoltán) kiegészülve született meg. 2011-ben jelent meg az első, 5 dalt tartalmazó
+        EP ’The Day Ends’ címmel. 2013 júniusában megjelent az első nagylemezük a ’Devil’s Nectar’ címmel, amely az “Év debütáló lemeze” lett a HangSúly zenei díj szavazásán és elnyerték az “Év albuma” díjat a Kettőnégy Gumizsiráf Díjátadón. 2014 szeptemberében kiadták a
+        második nagylemezüket, a ‘Hellish’-t, amely  2015-ben Fonogram díjat nyert az "Év hazai hard rock vagy metálalbuma" kategóriában. A HangSúly zenei díj szavazásán is elnyerte az "Év albuma" címet, illetve az Apey & The Pea lett az “Év koncertzenekara”. 2016 áprilisában
+        elindult az első önálló országos turnéjuk, valamint elkezdték a harmadik nagylemezük írását. Az évek során felléptek már Magyarország valamennyi vidéki klubjában és fesztiváljain, játszottak olyan legendás előadókkal mint a Saint Vitus, a Crowbar, Dopethrone, vagy a
+        kultikus londoni ‘The Underworld’ helyszínén olyan bandák társaságában mint a Weedater, a Bongripper vagy a Primitive Man. 2017 szeptemberében adták ki harmadik és egyben legelismertebb lemezüket ‘HEX’ címmel, melyet egye teltházas A38 hajós lemezbemutató követett, illetve
+        az országos ‘RATS’ belföldi turné. 2018 májusában a NAGY-SZIN-PAD fődíját a közönségszavazatok alapján a zenekar nyerte, így 2018-ban a Sziget fesztivál, a  VOLT fesztivál, a Strand fesztivál nagyszínpadán léphettek fel. Számos egyéb nyári fesztivál fellépés mellett jártak
+        Csehországban a Rock For Churchill fesztiválon és Lengyelországban a Pol’and’Rock fesztiválon. 2019-ben a zenekar képviselte Magyarországot a 2019-es Eurosonic (ESNS19’) fesztiválon, illetve a Tallinn Music Week-en. Áprilisban egy 25 állomásos nightliner Európa turnéra indultak,
+        majd szeptemberben több ezer ember előtt, tizedik születésnapi koncertjük végén jelentették be a zenekar tagjai, hogy ez volt az Apey & the Pea utolsó fellépése. A jubileum ugyanis egyben korszakváltást is jelent, a trió LAZARVS néven folytatja tovább.
       </div>
       <br><br>
       <router-link class="cursor back" to="/"><img height="25" width="20" :src="require('../assets/back.svg')" alt="Back">Back</router-link>
@@ -47,6 +54,10 @@ export default {
   },
   methods: {
     handleResize() {
+      if (document.getElementsByClassName("navbar-toggler")[0].clientHeight !== 0) {
+        this.height = document.getElementsByClassName("navbar-toggler")[0].clientHeight + 20;
+        return;
+      }
       this.height = document.getElementsByClassName("navbar")[0].clientHeight + 20;
     },
     updateLanguage(oppositeLanguage) {

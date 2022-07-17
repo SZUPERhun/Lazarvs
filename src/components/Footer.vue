@@ -4,7 +4,7 @@
      <img @click="scrollToTop" class="cursor" width="35" height="35" :src="require('../assets/uparrow.svg')" alt="up">
    </div>
    <div class="centered-bottom">
-     © 2009-2021 LAZARVS
+     © 2009-{{ currentYear }} LAZARVS
    </div>
 
  </div>
@@ -14,6 +14,11 @@
 
 export default {
   name: "Footer",
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    }
+  },
   methods: {
     scrollToTop() {
       window.scroll({

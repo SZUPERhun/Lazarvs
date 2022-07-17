@@ -1,18 +1,17 @@
 <template>
-  <div class="navbar-container">
+  <div class="navbar-container" :key="templateKey">
     <b-navbar toggleable="lg">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item><router-link to="/bio">BIO</router-link></b-nav-item>
-          <b-nav-item><router-link to="/">LIVE</router-link></b-nav-item>
           <b-nav-item><router-link to="/concerts">CONCERTS</router-link></b-nav-item>
-          <b-nav-item href="https://lazarvs.empiremerch.com">STORE</b-nav-item>
-          <b-nav-item href="https://urlzs.com/cKAVW"><img height="70" width="40" src="../assets/spotify.svg" alt="Spotify"></b-nav-item>
-          <b-nav-item href="https://www.facebook.com/lazarvsofficial"><img height="70" width="40" src="../assets/facebook.svg" alt="Facebook"></b-nav-item>
-          <b-nav-item href="https://twitter.com/lazarvs666"><img height="70" width="40" src="../assets/twitter.svg" alt="Twitter"></b-nav-item>
-          <b-nav-item href="https://urlzs.com/iSyHE"><img height="70" width="40" src="../assets/youtube.svg" alt="Youtube"></b-nav-item>
+          <b-nav-item href="https://lazarvs-shop.myshopify.com">MERCH</b-nav-item>
           <b-nav-item href="https://www.instagram.com/lazarvsofficial"><img height="70" width="40" src="../assets/instagram.svg" alt="Instagram"></b-nav-item>
+          <b-nav-item href="https://www.facebook.com/lazarvsofficial"><img height="70" width="40" src="../assets/facebook.svg" alt="Facebook"></b-nav-item>
+          <b-nav-item href="https://urlzs.com/cKAVW"><img height="70" width="40" src="../assets/spotify.svg" alt="Spotify"></b-nav-item>
+          <b-nav-item href="https://urlzs.com/iSyHE"><img height="70" width="40" src="../assets/youtube.svg" alt="Youtube"></b-nav-item>
+
         </b-navbar-nav>
       </b-collapse>
   </b-navbar>
@@ -22,6 +21,14 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+      return {
+          templateKey: 0,
+      }
+  },
+  mounted() {
+    this.templateKey++;
+  },
 }
 </script>
 
@@ -70,5 +77,11 @@ export default {
   }
   .navbar-toggler {
     margin: 0 auto;
+  }
+  @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 </style>
