@@ -2,8 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import VueRouter from 'vue-router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.use(VueRouter)
+Vue.use(VueAxios, axios)
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -16,6 +19,10 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import SweetModal from 'sweet-modal-vue/src/plugin.js'
+
+Vue.use(SweetModal);
+
 import VueLodash from 'vue-lodash'
 import lodash from 'lodash'
 
@@ -23,6 +30,7 @@ Vue.use(VueLodash, { lodash: lodash })
 
 import Index from './views/Index';
 import Bio from './views/Bio';
+import Albums from './views/Albums';
 import Concerts from './views/Concerts';
 
 const router = new VueRouter({
@@ -38,6 +46,11 @@ const router = new VueRouter({
             path: '/bio',
             name: 'bio',
             component: Bio,
+        },
+        {
+            path: '/albums',
+            name: 'albums',
+            component: Albums,
         },
         {
             path: '/concerts',

@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
-    "lint": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service lint",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
+    "cross-env": "^7.0.3",
     "lodash": "^4.17.21",
+    "sweet-modal-vue": "^2.0.0",
     "vue": "^2.6.14",
+    "vue-axios": "^3.4.1",
     "vue-lodash": "^2.1.2",
     "vue-router": "^3.5.3"
   },
@@ -26,6 +30,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "execa": "^4.0.0",
     "node-emoji": "^1.10.0",
+    "sass": "^1.54.0",
+    "sass-loader": "^10.3.1",
     "vue-cli-plugin-gh-pages-auto-deploy": "~0.5.0",
     "vue-template-compiler": "^2.6.14"
   },

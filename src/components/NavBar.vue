@@ -5,6 +5,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item><router-link to="/bio">BIO</router-link></b-nav-item>
+          <b-nav-item><router-link to="/albums">ALBUMS</router-link></b-nav-item>
           <b-nav-item><router-link to="/concerts">CONCERTS</router-link></b-nav-item>
           <b-nav-item href="https://lazarvs-shop.myshopify.com">MERCH</b-nav-item>
           <b-nav-item href="https://www.instagram.com/lazarvsofficial"><img height="70" width="40" src="../assets/instagram.svg" alt="Instagram"></b-nav-item>
